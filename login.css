@@ -1,0 +1,192 @@
+/* --- Global Reset and Font --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* --- Background and Centering --- */
+.background-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* Replace 'winter-bg.jpg' with your actual winter image file */
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 20px;
+  /* Add padding to prevent content from touching screen edges */
+}
+
+/* --- Glassmorphism Form Container (Shared Style) --- */
+.login-form,
+.signup-form {
+  /* Glass Effect */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border-radius: 15px;
+  padding: 40px;
+
+  /* Set a max-width and use 90% for flexibility on smaller screens */
+  width: 90%;
+  max-width: 400px;
+
+  /* Subtle Shadow and Border */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: all 0.3s ease;
+  /* For smooth transitions on resize */
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* --- Input Fields (Floating Label Effect) --- */
+.input-group {
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: border-bottom 0.3s;
+}
+
+.input-group input:focus {
+  border-bottom: 2px solid #fff;
+}
+
+.input-group label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  color: rgba(255, 255, 255, 0.7);
+  transition: 0.2s ease-out;
+  pointer-events: none;
+}
+
+/* Floating Label Logic */
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+  top: -15px;
+  font-size: 14px;
+  color: #fff;
+}
+
+/* --- Options and Links (Made more flexible) --- */
+.options {
+  /* Login: space between "Remember Me" and "Forgot Password" */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 25px;
+  font-size: 14px;
+}
+
+/* Sign-Up: Checkbox terms label style */
+.terms-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  /* Allows text to wrap on small screens */
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: text-decoration 0.3s;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* --- Submit Buttons --- */
+.log-in-btn,
+.sign-up-btn {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.log-in-btn:hover,
+.sign-up-btn:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- Register/Login Link --- */
+.register-link,
+.login-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 15px;
+}
+
+/* ==================================== */
+/* 📱 MEDIA QUERY FOR SMALL SCREENS */
+/* ==================================== */
+@media (max-width: 480px) {
+  .login-form,
+  .signup-form {
+    padding: 30px 20px;
+    /* Reduce padding on smaller phones */
+  }
+
+  h2 {
+    font-size: 24px;
+    /* Smaller title */
+    margin-bottom: 25px;
+  }
+
+  .input-group {
+    margin-bottom: 20px;
+    /* Tighter spacing */
+  }
+
+  /* Adjust options layout to stack vertically */
+  .options {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    /* Space between "Remember Me" and "Forgot Password" */
+    margin-bottom: 20px;
+  }
+
+  .log-in-btn,
+  .sign-up-btn {
+    font-size: 16px;
+    /* Slightly smaller button text */
+  }
+
+  .register-link,
+  .login-link {
+    font-size: 14px;
+  }
+}

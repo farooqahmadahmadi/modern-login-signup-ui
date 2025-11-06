@@ -1,0 +1,179 @@
+/* --- Global Reset and Font --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- Background and Centering --- */
+.background-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* This padding ensures the form doesn't touch the edges on mobile */
+    padding: 20px;
+    /* Replace 'winter-bg.jpg' with your actual winter image file */
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+/* --- Glassmorphism Form Container --- */
+.signup-form {
+    /* Glass Effect: semi-transparent white + blur */
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 15px;
+    padding: 40px;
+
+    /* ⭐ RESPONSIVE CHANGE: Use % width and max-width */
+    width: 90%;
+    max-width: 400px;
+
+    /* Subtle Shadow and Border */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transition: all 0.3s ease;
+    /* Smooth resizing */
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* --- Input Fields (Floating Label Effect) --- */
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    transition: border-bottom 0.3s;
+}
+
+.input-group input:focus {
+    border-bottom: 2px solid #fff;
+    /* Highlight on focus */
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: rgba(255, 255, 255, 0.7);
+    transition: 0.2s ease-out;
+    pointer-events: none;
+}
+
+/* Floating Label Logic */
+.input-group input:focus~label,
+.input-group input:valid~label {
+    top: -15px;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* --- Options and Links --- */
+.options {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.terms-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* ⭐ RESPONSIVE CHANGE: Allow terms to wrap on small screens */
+    flex-wrap: wrap;
+}
+
+.terms-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: text-decoration 0.3s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Submit Button --- */
+.sign-up-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 20px;
+    background-color: #ffffff;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+.sign-up-btn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* --- Log in Link --- */
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+/* ================================================= */
+/* 📱 MEDIA QUERY: OPTIMIZATIONS FOR SMALL PHONES (< 480px) */
+/* ================================================= */
+@media (max-width: 480px) {
+
+    .signup-form {
+        padding: 30px 20px;
+        /* Reduce padding to give content more room */
+    }
+
+    h2 {
+        font-size: 24px;
+        /* Slightly smaller title */
+        margin-bottom: 25px;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+        /* Tighter spacing for inputs */
+    }
+
+    .sign-up-btn {
+        font-size: 16px;
+        /* Smaller button text */
+    }
+
+    .login-link {
+        font-size: 14px;
+    }
+}
