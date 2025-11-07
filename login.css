@@ -13,7 +13,7 @@
   align-items: center;
   min-height: 100vh;
   /* Replace 'winter-bg.jpg' with your actual winter image file */
-  background-image: url("background.jpg");
+  background-image: url("background.jpeg");
   background-size: cover;
   background-position: center;
   color: #fff;
