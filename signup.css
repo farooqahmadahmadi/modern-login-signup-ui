@@ -15,7 +15,7 @@
     /* This padding ensures the form doesn't touch the edges on mobile */
     padding: 20px;
     /* Replace 'winter-bg.jpg' with your actual winter image file */
-    background-image: url('background.jpeg');
+    background-image: url('background.jpg');
     background-size: cover;
     background-position: center;
     color: #fff;
